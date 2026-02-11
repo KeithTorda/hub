@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbo -p 3600",
-    "build": "next build",
+    "build": "convex codegen && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -42,7 +42,7 @@
     "clsx": "^2.1.1",
     "cmdk": "1.1.1",
     "convex": "^1.31.7",
-    "date-fns": "4.1.0",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "8.5.1",
     "input-otp": "1.4.1",
     "lucide-react": "^0.544.0",
