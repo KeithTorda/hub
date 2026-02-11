@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 120 20% 97%;
+    --foreground: 150 10% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 150 10% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 10% 15%;
+    --primary: 145 45% 32%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 140 15% 92%;
+    --secondary-foreground: 150 10% 15%;
+    --muted: 120 10% 94%;
+    --muted-foreground: 150 5% 45%;
+    --accent: 42 90% 50%;
+    --accent-foreground: 150 10% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 140 10% 85%;
+    --input: 140 10% 85%;
+    --ring: 145 45% 32%;
+    --chart-1: 145 45% 32%;
+    --chart-2: 42 90% 50%;
+    --chart-3: 200 60% 45%;
+    --chart-4: 340 65% 55%;
+    --chart-5: 280 50% 50%;
+    --radius: 0.5rem;
+    --sidebar-background: 145 35% 25%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 42 90% 50%;
+    --sidebar-primary-foreground: 150 10% 15%;
+    --sidebar-accent: 145 30% 30%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 145 25% 35%;
+    --sidebar-ring: 42 90% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
