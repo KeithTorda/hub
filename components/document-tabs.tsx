@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { useQuery } from "convex/react"
 import { api } from "@/convex/_generated/api"
 import Link from "next/link"
-import { DocumentViewModal } from "./document-view-modal"
+import { FilePreviewModal } from "@/components/file-preview-modal"
 import type { Doc } from "@/convex/_generated/dataModel"
 
 interface DocumentTabsProps {
@@ -89,10 +89,12 @@ export function DocumentTabs({ title = "Documents", filter }: DocumentTabsProps)
         )}
       </div>
 
-      <DocumentViewModal
-        document={selectedDoc}
-        open={modalOpen}
-        onOpenChange={setModalOpen}
+      <FilePreviewModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        url={selectedDoc?.url || null}
+        title={selectedDoc?.title || ""}
+        format={selectedDoc?.format || ""}
       />
     </div>
   )
