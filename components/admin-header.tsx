@@ -3,6 +3,8 @@
 import { Search, ChevronDown } from "lucide-react"
 import { useState, useEffect } from "react"
 import { NotificationDropdown } from "@/components/notification-dropdown"
+import { ModeToggle } from "@/components/mode-toggle"
+
 
 export function AdminHeader({ title }: { title: string }) {
   const [showMenu, setShowMenu] = useState(false)
@@ -38,7 +40,9 @@ export function AdminHeader({ title }: { title: string }) {
           />
         </div>
 
+        <ModeToggle />
         <NotificationDropdown variant="admin" />
+
 
         <div className="relative">
           <button

@@ -7,6 +7,8 @@ import { PortalFooter } from "@/components/portal-footer"
 import { AuthGuard } from "@/components/auth-guard"
 
 import { GlobalRightSidebar } from "@/components/global-right-sidebar"
+import ParticlesBackground from "@/components/ui/particles-background"
+
 
 export default function UserLayout({
     children,
@@ -15,7 +17,9 @@ export default function UserLayout({
 }) {
     return (
         <AuthGuard>
-            <div className="flex min-h-screen flex-col bg-background">
+            <div className="flex min-h-screen flex-col bg-background relative">
+                <ParticlesBackground />
+
                 <PortalHeader />
                 <AnnouncementTicker />
                 <div className="flex flex-1 overflow-hidden">

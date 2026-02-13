@@ -36,29 +36,29 @@ export function AnnouncementTicker() {
   const current = announcements[currentIndex]
 
   return (
-    <div className="flex items-center gap-3 bg-foreground px-6 py-2">
-      <span className="shrink-0 rounded bg-accent px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-accent-foreground">
+    <div className="flex items-center gap-3 bg-muted px-6 py-2 border-b border-border">
+      <span className="shrink-0 rounded bg-primary px-3 py-0.5 text-xs font-bold uppercase tracking-wider text-primary-foreground">
         Announcement
       </span>
       <div className="min-w-0 flex-1 overflow-hidden">
-        <p className="truncate text-sm text-primary-foreground">
+        <p className="truncate text-sm font-medium text-foreground">
           {current ? `${current.title} - ${current.content}` : "No available announcement."}
         </p>
       </div>
       <div className="flex shrink-0 items-center gap-1">
-        <button type="button" onClick={prev} className="rounded p-1 text-primary-foreground/70 transition-colors hover:text-primary-foreground" aria-label="Previous">
-          <Rewind className="h-3.5 w-3.5" />
+        <button type="button" onClick={prev} className="rounded p-1 text-muted-foreground transition-colors hover:text-foreground" aria-label="Previous">
+          <Rewind className="h-4 w-4" />
         </button>
         <button
           type="button"
           onClick={() => setIsPaused(!isPaused)}
-          className="rounded p-1 text-primary-foreground/70 transition-colors hover:text-primary-foreground"
+          className="rounded p-1 text-muted-foreground transition-colors hover:text-foreground"
           aria-label={isPaused ? "Play" : "Pause"}
         >
-          {isPaused ? <Play className="h-3.5 w-3.5" /> : <Pause className="h-3.5 w-3.5" />}
+          {isPaused ? <Play className="h-4 w-4" /> : <Pause className="h-4 w-4" />}
         </button>
-        <button type="button" onClick={next} className="rounded p-1 text-primary-foreground/70 transition-colors hover:text-primary-foreground" aria-label="Next">
-          <FastForward className="h-3.5 w-3.5" />
+        <button type="button" onClick={next} className="rounded p-1 text-muted-foreground transition-colors hover:text-foreground" aria-label="Next">
+          <FastForward className="h-4 w-4" />
         </button>
       </div>
     </div>

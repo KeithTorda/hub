@@ -2,6 +2,8 @@ import React from "react"
 import type { Metadata } from 'next'
 import { Inter, Space_Mono } from 'next/font/google'
 import { ConvexClientProvider } from "@/components/convex-client-provider"
+import { ThemeProvider } from "@/components/theme-provider"
+
 
 import './globals.css'
 
@@ -19,9 +21,17 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${spaceMono.variable} font-sans antialiased`}>
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+        >
+            <ConvexClientProvider>{children}</ConvexClientProvider>
+        </ThemeProvider>
+
       </body>
     </html>
   )

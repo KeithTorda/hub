@@ -4,6 +4,8 @@ import { Bell, Search, Link2, ChevronDown, Shield } from "lucide-react"
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { NotificationDropdown } from "@/components/notification-dropdown"
+import { ModeToggle } from "@/components/mode-toggle"
+
 
 export function PortalHeader() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -47,7 +49,9 @@ export function PortalHeader() {
           </div>
 
           <div className="flex items-center gap-4">
+            <ModeToggle />
             <NotificationDropdown variant="portal" />
+
 
           </div>
 
