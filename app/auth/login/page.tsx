@@ -81,10 +81,7 @@ export default function UserLoginPage() {
                     </div>
 
                     <div className="space-y-2">
-                        <div className="flex items-center justify-between">
-                            <label className="text-xs font-semibold uppercase text-muted-foreground">Password</label>
-                            <Link href="#" className="text-xs text-primary hover:underline">Forgot password?</Link>
-                        </div>
+                        <label className="text-xs font-semibold uppercase text-muted-foreground">Password</label>
                         <div className="relative">
                             <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                             <input
@@ -95,6 +92,9 @@ export default function UserLoginPage() {
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
+                        </div>
+                        <div className="text-right">
+                            <Link href="#" className="text-xs text-primary hover:underline">Forgot password?</Link>
                         </div>
                     </div>
 
